@@ -12,7 +12,7 @@
 #include <boost/property_tree/ptree.hpp>
 
 #include "hddApi.hpp"
-#include "hddPythonApi.hpp"
+//#include "hddPythonApi.hpp"
 #include <mpi.h>
 
 using namespace Eigen;
@@ -33,14 +33,9 @@ int main(int argc, char **argv)
 
   MPI_Comm_rank(comm, &rank);
 // ** H-D-D **
-//  HddApi hdd(&comm);
   HddApi hdd(comm);
-//  HddApi& hdd = *CreateHdd(&comm); c/python wrapper
-//  test_empty();
 
   std::string path2OptJsonFile("");
-
-
   if (argc > 1)
     path2OptJsonFile = argv[1];
   else
